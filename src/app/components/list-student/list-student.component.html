@@ -1,0 +1,28 @@
+<p>Student List</p>
+
+<table class="table" datatable [dtOptions]="dtOptions">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of studentData">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.surname}}</td>
+      <td>{{item.email}}</td>
+      <td>
+        <i (click)="removeStudent(item.id)" class="fa fa-trash"></i>
+        &nbsp;&nbsp;
+        <a routerLink="/edit/{{item.id}}"><i class="fa fa-edit"></i> </a>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
